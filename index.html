@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>GithubSpaces | Solución de Almacenamiento en la Nube Profesional</title>
+    <meta name="description" content="Transforma GitHub Releases en tu nube personal pública o privada. Almacenamiento gratuito y seguro, financiado por KodxStudios.">
+
+    <style>
+        /* Variables CSS para un tema profesional oscuro */
+        :root {
+            --bg-primary: #0d1117;
+            --bg-secondary: #161b22;
+            --text-primary: #c9d1d9;
+            --text-secondary: #8b949e;
+            --accent-color: #58a6ff;
+            --border-color: #30363d;
+            --success-color: #238636;
+            --warning-bg: #1f1b13;
+            --warning-border: #6e561b;
+            --container-width: 960px;
+        }
+
+        /* Reset básico y tipografía */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+
+        /* Layout y Contenedores */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 60px 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        /* Header y Navegación */
+        header {
+            background-color: var(--bg-secondary);
+            padding: 40px 0;
+            border-bottom: 1px solid var(--border-color);
+            text-align: center;
+        }
+
+        .header-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--accent-color);
+            margin-bottom: 10px;
+        }
+
+        .header-subtitle {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+        }
+
+        .sponsor-badge {
+            display: inline-block;
+            background-color: var(--border-color);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            color: var(--text-primary);
+        }
+
+        .sponsor-name {
+            font-weight: bold;
+            color: var(--accent-color);
+        }
+
+        /* Tipografía de contenido */
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 25px;
+            color: var(--text-primary);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 10px;
+            display: inline-block;
+        }
+
+        h3 {
+            font-size: 1.4rem;
+            margin: 20px 0 10px;
+            color: var(--accent-color);
+        }
+
+        p {
+            margin-bottom: 20px;
+            color: var(--text-secondary);
+        }
+
+        /* Estilos de la guía paso a paso */
+        .steps-list {
+            list-style: none;
+            counter-reset: step-counter;
+        }
+
+        .steps-list li {
+            position: relative;
+            margin-bottom: 30px;
+            padding-left: 60px;
+        }
+
+        .steps-list li::before {
+            counter-increment: step-counter;
+            content: counter(step-counter);
+            position: absolute;
+            left: 0;
+            top: -5px;
+            width: 40px;
+            height: 40px;
+            background-color: var(--accent-color);
+            color: var(--bg-primary);
+            font-weight: bold;
+            font-size: 1.2rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Cajas de información y advertencia */
+        .info-box, .warning-box {
+            padding: 25px;
+            border-radius: 8px;
+            margin: 30px 0;
+        }
+
+        .info-box {
+            background-color: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+        }
+
+        .warning-box {
+            background-color: var(--warning-bg);
+            border: 1px solid var(--warning-border);
+        }
+
+        .warning-title {
+            color: #eac54f;
+            font-weight: bold;
+            margin-bottom: 10px;
+            display: block;
+            font-size: 1.1rem;
+        }
+
+        code {
+            background-color: rgba(110, 118, 129, 0.4);
+            padding: 3px 6px;
+            border-radius: 4px;
+            font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+            font-size: 0.9em;
+        }
+
+        /* Reproductor de video responsivo */
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%; /* Ratio 16:9 */
+            padding-top: 25px;
+            height: 0;
+            background-color: #000;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        .video-wrapper video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--bg-secondary);
+            padding: 30px 0;
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Media Queries */
+        @media (max-width: 768px) {
+            .header-title {
+                font-size: 2rem;
+            }
+            section {
+                padding: 40px 0;
+            }
+            .steps-list li {
+                padding-left: 0;
+            }
+            .steps-list li::before {
+                position: relative;
+                margin-bottom: 10px;
+                top: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1 class="header-title">GithubSpaces</h1>
+            <p class="header-subtitle">Infraestructura de nube personal, gratuita y segura. Aprovecha el poder de GitHub.</p>
+            <div class="sponsor-badge">
+                Financiado y respaldado por <span class="sponsor-name">KodxStudios</span>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="introduccion">
+            <div class="container">
+                <h2>Redefiniendo el Almacenamiento en la Nube</h2>
+                <p>En la era digital actual, la necesidad de almacenamiento en la nube accesible y confiable es fundamental. <strong>GithubSpaces</strong> surge como una metodología innovadora que permite a desarrolladores y usuarios avanzados utilizar la robusta infraestructura de GitHub como su propio servicio de almacenamiento en la nube.</p>
+                <p>A diferencia de los servicios tradicionales que imponen cuotas mensuales o limitaciones estrictas en sus planes gratuitos, GithubSpaces aprovecha la funcionalidad nativa de "Releases" (Lanzamientos) de GitHub para ofrecer un espacio de almacenamiento teóricamente ilimitado, altamente disponible y respaldado por la seguridad de nivel empresarial de Microsoft Azure (la infraestructura subyacente de GitHub).</p>
+                
+                <div class="info-box">
+                    <h3>Flexibilidad Total: Público o Privado</h3>
+                    <p>Usted mantiene el control absoluto sobre la privacidad de sus datos. Al configurar la visibilidad de su repositorio de GitHub, usted define la naturaleza de su nube:</p>
+                    <ul>
+                        <li><strong>Nube Privada:</strong> Cree un repositorio privado para almacenar copias de seguridad sensibles, documentos personales o archivos de proyectos confidenciales, accesibles solo para usted y sus colaboradores designados.</li>
+                        <li><strong>Nube Pública:</strong> Utilice un repositorio público para distribuir software, compartir grandes conjuntos de datos o activos multimedia con el mundo entero mediante enlaces de descarga directa.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="tutorial-video">
+            <div class="container">
+                <h2>Demostración en Video</h2>
+                <p>A continuación, presentamos una demostración visual de la plataforma en acción. Este reproductor está optimizado para adaptarse perfectamente a dispositivos móviles y de escritorio.</p>
+                
+                <div class="video-wrapper">
+                    <video controls playsinline poster="placeholder-image.jpg">
+                        <source src="https://d1yei2z3i6k35z.cloudfront.net/15379058/6942d67782124_Record_2025-12-17-11-02-18_e4424258c8b8649f6e67d283a50a2cbc.mp4" type="video/mp4">
+                        Tu navegador no soporta la etiqueta de video HTML5. Por favor, actualiza tu navegador.
+                    </video>
+                </div>
+            </div>
+        </section>
+
+        <section id="implementacion">
+            <div class="container">
+                <h2>Guía de Implementación Técnica</h2>
+                <p>El proceso para establecer su GithubSpace es directo y no requiere conocimientos avanzados de programación. Siga estos pasos para desplegar su unidad de almacenamiento:</p>
+
+                <ol class="steps-list">
+                    <li>
+                        <h3>Creación de Cuenta y Autenticación</h3>
+                        <p>Si aún no dispone de una, el primer paso es crear una cuenta gratuita en <a href="https://github.com" target="_blank" style="color: var(--accent-color); text-decoration: none;">GitHub.com</a>. Asegúrese de verificar su correo electrónico para activar todas las funcionalidades de la plataforma.</p>
+                    </li>
+                    <li>
+                        <h3>Inicialización del Repositorio</h3>
+                        <p>Cree un nuevo repositorio. Este actuará como el contenedor principal de su unidad de almacenamiento. Durante la creación, es crucial definir la visibilidad (Público o Privado) según sus necesidades de privacidad. Se recomienda inicializar el repositorio con un archivo <code>README.md</code> para establecer la rama principal.</p>
+                    </li>
+                    <li>
+                        <h3>Generación de un "Release"</h3>
+                        <p>La magia de GithubSpaces reside aquí. Navegue a la página principal de su nuevo repositorio y localice la sección "Releases" (o "Lanzamientos") en la barra lateral derecha. Haga clic en "Create a new release".</p>
+                    </li>
+                    <li>
+                        <h3>Carga de Activos Digitales</h3>
+                        <p>En la interfaz de creación del release, asigne una etiqueta de versión (ej. <code>v1.0.backup</code>) y un título descriptivo. En la sección inferior, encontrará el área de "Binaries" o "Assets". Arrastre y suelte sus archivos aquí. GitHub comenzará a subirlos a su red de distribución de contenido (CDN).</p>
+                        <p>Una vez finalizada la carga, haga clic en "Publish release". Sus archivos ahora están almacenados de forma segura en la nube.</p>
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+        <section id="limitaciones-soluciones">
+            <div class="container">
+                <h2>Gestión de Limitaciones Técnicas</h2>
+                <p>Si bien GitHub ofrece una capacidad de almacenamiento global asombrosa, existen restricciones técnicas a nivel de archivo individual para garantizar la estabilidad de la plataforma. Es vital comprender estas limitaciones para un uso profesional.</p>
+
+                <div class="warning-box">
+                    <span class="warning-title">Restricción Crítica: El Límite de 2GB</span>
+                    <p>GitHub impone un límite estricto de <strong>2 GB (gigabytes) por archivo individual</strong> subido a los activos de un Release. Intentar subir un archivo monolítico que exceda este tamaño resultará en un error de transferencia.</p>
+                </div>
+
+                <h3>La Solución Profesional: Compresión y División de Volúmenes</h3>
+                <p>Para almacenar archivos que superan los 2GB (como imágenes de disco, bases de datos extensas o archivos de video en alta resolución), la solución estándar de la industria es utilizar software de compresión para dividir el archivo grande en múltiples partes más pequeñas.</p>
+                <p>Recomendamos el uso de herramientas como <strong>WinRAR</strong>, <strong>7-Zip</strong> o utilidades de línea de comandos `tar`/`split` en sistemas UNIX.</p>
+
+                <h4>Procedimiento de Ejemplo con WinRAR:</h4>
+                <ol style="margin-left: 20px; color: var(--text-secondary);">
+                    <li>Haga clic derecho sobre el archivo grande que desea subir.</li>
+                    <li>Seleccione "Añadir al archivo...".</li>
+                    <li>En el formato de archivo, elija RAR o ZIP.</li>
+                    <li>Busque la opción "Partir en volúmenes, tamaño".</li>
+                    <li>Especifique un tamaño inferior al límite, por ejemplo: <code>1900 MB</code>.</li>
+                    <li>El software creará una secuencia de archivos (ej. <code>backup.part01.rar</code>, <code>backup.part02.rar</code>, etc.), cada uno por debajo del límite de 2GB.</li>
+                    <li>Suba estas partes individuales a su Github Release. Para recuperar el archivo original, simplemente descargue todas las partes y extraiga la primera; el software unirá automáticamente el resto.</li>
+                </ol>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2025 GithubSpaces. Una iniciativa de almacenamiento open-source.</p>
+            <p style="margin-top: 10px;">Desarrollado y Financiado con orgullo por <strong style="color: var(--accent-color);">KodxStudios</strong>.</p>
+            <p style="font-size: 0.8rem; margin-top: 20px; opacity: 0.6;">GitHub® es una marca registrada de GitHub, Inc. Este proyecto no está afiliado oficialmente con GitHub, Inc.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

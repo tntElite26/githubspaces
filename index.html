@@ -195,16 +195,20 @@
             height: 100%;
         }
 
-        /* --- NUEVOS ESTILOS PARA TABLA Y FAQ --- */
-
-        /* Estilos Tabla Comparativa */
+        /* ESTILOS NUEVOS (Tabla y FAQ) */
+        
+        /* Tabla */
+        .table-wrapper {
+            overflow-x: auto;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            margin-top: 20px;
+        }
         .comparison-table {
             width: 100%;
             border-collapse: collapse;
-            margin-top: 20px;
             background: var(--bg-secondary);
-            border-radius: 8px;
-            overflow: hidden;
+            min-width: 600px; /* Asegura que no se rompa en móviles muy pequeños */
         }
         .comparison-table th, .comparison-table td {
             padding: 15px;
@@ -218,14 +222,11 @@
             font-size: 0.85rem;
             letter-spacing: 1px;
         }
-        .highlight {
-            color: var(--accent-color);
-            font-weight: bold;
-        }
+        .highlight { color: var(--accent-color); font-weight: bold; }
         .positive { color: var(--success-color); font-weight: bold; }
         .negative { opacity: 0.7; }
 
-        /* Estilos FAQ Acordeón */
+        /* FAQ Acordeón */
         details {
             background: var(--bg-secondary);
             margin-bottom: 15px;
@@ -242,8 +243,7 @@
             position: relative;
             color: var(--text-primary);
         }
-        summary::-webkit-details-marker { display: none; } /* Ocultar triángulo default Chrome */
-        
+        summary::-webkit-details-marker { display: none; }
         summary::after {
             content: "+";
             position: absolute;
@@ -254,13 +254,8 @@
             transform: translateY(-55%);
             transition: transform 0.3s ease;
         }
-        details[open] summary::after { 
-            content: "-";
-            color: var(--accent-color);
-        }
-        details[open] {
-            border-color: var(--accent-color);
-        }
+        details[open] summary::after { content: "-"; color: var(--accent-color); }
+        details[open] { border-color: var(--accent-color); }
         .faq-content {
             padding: 0 20px 20px 20px;
             color: var(--text-secondary);
@@ -313,12 +308,7 @@
             font-size: 0.95rem;
         }
 
-        .social-btn svg {
-            width: 20px;
-            height: 20px;
-            fill: currentColor;
-            transition: fill 0.3s ease;
-        }
+        .social-btn svg { width: 20px; height: 20px; fill: currentColor; transition: fill 0.3s ease; }
 
         .social-btn:hover {
             transform: translateY(-3px);
@@ -333,17 +323,12 @@
         .social-btn.reddit:hover { color: var(--reddit-color); border-color: var(--reddit-color); }
         .social-btn.veta:hover { color: var(--veta-color); border-color: var(--veta-color); }
 
-        /* Responsive Media Queries */
+        /* Responsive */
         @media (max-width: 768px) {
             .header-title { font-size: 2rem; }
             section { padding: 40px 0; }
             .steps-list li { padding-left: 0; }
             .steps-list li::before { position: relative; margin-bottom: 10px; top: 0; }
-            
-            /* Responsive Table */
-            .table-wrapper { overflow-x: auto; }
-            .comparison-table { min-width: 500px; }
-            
             .social-links { gap: 10px; }
             .social-btn { padding: 8px 15px; font-size: 0.9rem; }
         }
@@ -366,18 +351,28 @@
             <div class="container">
                 <h2>Redefiniendo el Almacenamiento en la Nube</h2>
                 <p>En la era digital actual, la necesidad de almacenamiento en la nube accesible y confiable es fundamental. <strong>GithubSpaces</strong> surge como una metodología innovadora que permite a desarrolladores y usuarios avanzados utilizar la robusta infraestructura de GitHub como su propio servicio de almacenamiento en la nube.</p>
-                <p>A diferencia de los servicios tradicionales que imponen cuotas mensuales o limitaciones estrictas en sus planes gratuitos, GithubSpaces aprovecha la funcionalidad nativa de "Releases" (Lanzamientos) de GitHub para ofrecer un espacio de almacenamiento teóricamente ilimitado, altamente disponible y respaldado por la seguridad de nivel empresarial de Microsoft Azure.</p>
+                <p>A diferencia de los servicios tradicionales que imponen cuotas mensuales o limitaciones estrictas en sus planes gratuitos, GithubSpaces aprovecha la funcionalidad nativa de "Releases" (Lanzamientos) de GitHub para ofrecer un espacio de almacenamiento teóricamente ilimitado, altamente disponible y respaldado por la seguridad de nivel empresarial de Microsoft Azure (la infraestructura subyacente de GitHub).</p>
+                
+                <div class="info-box">
+                    <h3>Flexibilidad Total: Público o Privado</h3>
+                    <p>Usted mantiene el control absoluto sobre la privacidad de sus datos. Al configurar la visibilidad de su repositorio de GitHub, usted define la naturaleza de su nube:</p>
+                    <ul>
+                        <li><strong>Nube Privada:</strong> Cree un repositorio privado para almacenar copias de seguridad sensibles, documentos personales o archivos de proyectos confidenciales, accesibles solo para usted y sus colaboradores designados.</li>
+                        <li><strong>Nube Pública:</strong> Utilice un repositorio público para distribuir software, compartir grandes conjuntos de datos o activos multimedia con el mundo entero mediante enlaces de descarga directa.</li>
+                    </ul>
+                </div>
             </div>
         </section>
 
         <section id="tutorial-video">
             <div class="container">
                 <h2>Demostración en Video</h2>
-                <p>Mira la plataforma en acción. Reproductor optimizado para cualquier dispositivo.</p>
+                <p>A continuación, presentamos una demostración visual de la plataforma en acción. Este reproductor está optimizado para adaptarse perfectamente a dispositivos móviles y de escritorio.</p>
+                
                 <div class="video-wrapper">
                     <video controls playsinline poster="placeholder-image.jpg">
                         <source src="https://d1yei2z3i6k35z.cloudfront.net/15379058/6942d67782124_Record_2025-12-17-11-02-18_e4424258c8b8649f6e67d283a50a2cbc.mp4" type="video/mp4">
-                        Tu navegador no soporta la etiqueta de video HTML5.
+                        Tu navegador no soporta la etiqueta de video HTML5. Por favor, actualiza tu navegador.
                     </video>
                 </div>
             </div>
@@ -386,7 +381,7 @@
         <section id="comparativa">
             <div class="container">
                 <h2>¿Por qué GithubSpaces?</h2>
-                <p>Deja de pagar suscripciones mensuales por servicios limitados. Compara tú mismo la ventaja de nuestra metodología.</p>
+                <p>Deja de pagar suscripciones mensuales por servicios limitados. Compara tú mismo la ventaja de nuestra metodología frente a la competencia tradicional.</p>
                 
                 <div class="table-wrapper">
                     <table class="comparison-table">
@@ -418,11 +413,6 @@
                                 <td class="positive">Total (Público/Privado)</td>
                                 <td>Escaneo de contenido</td>
                             </tr>
-                            <tr>
-                                <td><strong>Persistencia de Enlaces</strong></td>
-                                <td class="positive">Permanente (Versiones)</td>
-                                <td>Enlaces temporales</td>
-                            </tr>
                         </tbody>
                     </table>
                 </div>
@@ -432,24 +422,25 @@
         <section id="implementacion">
             <div class="container">
                 <h2>Guía de Implementación Técnica</h2>
-                <p>Siga estos pasos sencillos para desplegar su unidad de almacenamiento:</p>
+                <p>El proceso para establecer su GithubSpace es directo y no requiere conocimientos avanzados de programación. Siga estos pasos para desplegar su unidad de almacenamiento:</p>
 
                 <ol class="steps-list">
                     <li>
-                        <h3>Creación de Cuenta</h3>
-                        <p>Cree una cuenta gratuita en <a href="https://github.com" target="_blank" style="color: var(--accent-color); text-decoration: none;">GitHub.com</a> y verifique su correo.</p>
+                        <h3>Creación de Cuenta y Autenticación</h3>
+                        <p>Si aún no dispone de una, el primer paso es crear una cuenta gratuita en <a href="https://github.com" target="_blank" style="color: var(--accent-color); text-decoration: none;">GitHub.com</a>. Asegúrese de verificar su correo electrónico para activar todas las funcionalidades de la plataforma.</p>
                     </li>
                     <li>
-                        <h3>Nuevo Repositorio</h3>
-                        <p>Cree un repositorio. Defina si será <strong>Público</strong> (para compartir) o <strong>Privado</strong> (para seguridad personal). Inicialice con un README.</p>
+                        <h3>Inicialización del Repositorio</h3>
+                        <p>Cree un nuevo repositorio. Este actuará como el contenedor principal de su unidad de almacenamiento. Durante la creación, es crucial definir la visibilidad (Público o Privado) según sus necesidades de privacidad. Se recomienda inicializar el repositorio con un archivo <code>README.md</code> para establecer la rama principal.</p>
                     </li>
                     <li>
-                        <h3>Crear Release</h3>
-                        <p>En la sección "Releases", haga clic en "Create a new release". Asigne una etiqueta de versión (ej. <code>v1.0</code>).</p>
+                        <h3>Generación de un "Release"</h3>
+                        <p>La magia de GithubSpaces reside aquí. Navegue a la página principal de su nuevo repositorio y localice la sección "Releases" (o "Lanzamientos") en la barra lateral derecha. Haga clic en "Create a new release".</p>
                     </li>
                     <li>
-                        <h3>Subir Archivos</h3>
-                        <p>Arrastre sus archivos al área de "Binaries". Una vez cargados, publique el release. ¡Su nube está lista!</p>
+                        <h3>Carga de Activos Digitales</h3>
+                        <p>En la interfaz de creación del release, asigne una etiqueta de versión (ej. <code>v1.0.backup</code>) y un título descriptivo. En la sección inferior, encontrará el área de "Binaries" o "Assets". Arrastre y suelte sus archivos aquí. GitHub comenzará a subirlos a su red de distribución de contenido (CDN).</p>
+                        <p>Una vez finalizada la carga, haga clic en "Publish release". Sus archivos ahora están almacenados de forma segura en la nube.</p>
                     </li>
                 </ol>
             </div>
@@ -457,46 +448,61 @@
 
         <section id="limitaciones-soluciones">
             <div class="container">
-                <h2>Gestión de Limitaciones</h2>
+                <h2>Gestión de Limitaciones Técnicas</h2>
+                <p>Si bien GitHub ofrece una capacidad de almacenamiento global asombrosa, existen restricciones técnicas a nivel de archivo individual para garantizar la estabilidad de la plataforma. Es vital comprender estas limitaciones para un uso profesional.</p>
+
                 <div class="warning-box">
                     <span class="warning-title">Restricción Crítica: El Límite de 2GB</span>
-                    <p>GitHub impone un límite de <strong>2 GB por archivo individual</strong>.</p>
+                    <p>GitHub impone un límite estricto de <strong>2 GB (gigabytes) por archivo individual</strong> subido a los activos de un Release. Intentar subir un archivo monolítico que exceda este tamaño resultará en un error de transferencia.</p>
                 </div>
-                <h3>Solución Profesional: Compresión</h3>
-                <p>Utilice <strong>WinRAR</strong> o <strong>7-Zip</strong> para dividir archivos grandes en partes (ej. 1900 MB). Suba las partes individualmente y el receptor solo deberá descomprimir la primera parte.</p>
+
+                <h3>La Solución Profesional: Compresión y División de Volúmenes</h3>
+                <p>Para almacenar archivos que superan los 2GB (como imágenes de disco, bases de datos extensas o archivos de video en alta resolución), la solución estándar de la industria es utilizar software de compresión para dividir el archivo grande en múltiples partes más pequeñas.</p>
+                <p>Recomendamos el uso de herramientas como <strong>WinRAR</strong>, <strong>7-Zip</strong> o utilidades de línea de comandos `tar`/`split` en sistemas UNIX.</p>
+
+                <h4>Procedimiento de Ejemplo con WinRAR:</h4>
+                <ol style="margin-left: 20px; color: var(--text-secondary);">
+                    <li>Haga clic derecho sobre el archivo grande que desea subir.</li>
+                    <li>Seleccione "Añadir al archivo...".</li>
+                    <li>En el formato de archivo, elija RAR o ZIP.</li>
+                    <li>Busque la opción "Partir en volúmenes, tamaño".</li>
+                    <li>Especifique un tamaño inferior al límite, por ejemplo: <code>1900 MB</code>.</li>
+                    <li>El software creará una secuencia de archivos (ej. <code>backup.part01.rar</code>, <code>backup.part02.rar</code>, etc.), cada uno por debajo del límite de 2GB.</li>
+                    <li>Suba estas partes individuales a su Github Release. Para recuperar el archivo original, simplemente descargue todas las partes y extraiga la primera; el software unirá automáticamente el resto.</li>
+                </ol>
             </div>
         </section>
 
         <section id="faq">
             <div class="container">
                 <h2>Preguntas Frecuentes</h2>
-                <p>Respuestas rápidas a las dudas más comunes sobre el sistema.</p>
+                <p>Soluciones rápidas a dudas comunes sobre el funcionamiento de GithubSpaces.</p>
 
                 <details>
-                    <summary>¿Realmente es gratis y seguro?</summary>
+                    <summary>¿Realmente es gratis?</summary>
                     <div class="faq-content">
-                        Sí. GitHub permite crear repositorios ilimitados de forma gratuita. La seguridad depende de la configuración de tu repositorio: si lo pones en "Privado", nadie más que tú puede ver o descargar los archivos.
+                        Sí. GitHub ofrece repositorios públicos y privados ilimitados de forma gratuita. GithubSpaces es simplemente una metodología para usar ese espacio de forma inteligente.
                     </div>
                 </details>
 
                 <details>
-                    <summary>¿Puedo compartir enlaces directos con otras personas?</summary>
+                    <summary>¿Mis archivos están seguros?</summary>
                     <div class="faq-content">
-                        Absolutamente. Si tu repositorio es "Público", puedes copiar el enlace del archivo en el Release y enviárselo a cualquier persona. Funcionará como una descarga directa de alta velocidad.
+                        Absolutamente. Si configuras tu repositorio como "Privado", solo tú y las personas que autorices explícitamente podrán acceder a los archivos. GitHub utiliza la infraestructura segura de Microsoft Azure.
                     </div>
                 </details>
 
                 <details>
-                    <summary>¿GitHub borrará mis archivos?</summary>
+                    <summary>¿Qué pasa si subo un archivo de más de 2GB sin comprimir?</summary>
                     <div class="faq-content">
-                        GitHub está diseñado para alojar código y binarios de software. Mientras no alojes contenido ilegal, malware o infrinjas los términos de servicio (copyright extremo), tus archivos permanecerán allí indefinidamente.
+                        La subida fallará automáticamente o se cortará al final. Es obligatorio usar WinRAR o 7-Zip para dividir cualquier archivo que supere los 2GB en partes más pequeñas (ej. 1900MB).
                     </div>
                 </details>
 
                 <details>
-                    <summary>¿Qué hago si falla la subida de un archivo grande?</summary>
+                    <summary>¿Puedo compartir archivos con otras personas?</summary>
                     <div class="faq-content">
-                        Es probable que tu conexión a internet haya fluctuado o el archivo supere los 2GB. Asegúrate de usar la técnica de compresión por partes explicada en la sección de limitaciones.
+                        Sí. Si tu repositorio es Público, puedes copiar el enlace de descarga del archivo y enviárselo a cualquier persona. Funcionará como un enlace de descarga directa de alta velocidad.
                     </div>
                 </details>
             </div>

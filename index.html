@@ -20,6 +20,14 @@
             --warning-bg: #1f1b13;
             --warning-border: #6e561b;
             --container-width: 960px;
+            
+            /* Colores de Marcas para Redes Sociales */
+            --whatsapp-color: #25D366;
+            --facebook-color: #1877F2;
+            --instagram-color: #E4405F;
+            --mastodon-color: #6364FF;
+            --reddit-color: #FF4500;
+            --veta-color: #00bfa5; /* Color distintivo para VETA */
         }
 
         /* Reset básico y tipografía */
@@ -187,14 +195,69 @@
             height: 100%;
         }
 
-        /* Footer */
+        /* Footer y Redes Sociales */
         footer {
             background-color: var(--bg-secondary);
-            padding: 30px 0;
+            padding: 40px 0;
             text-align: center;
             color: var(--text-secondary);
             font-size: 0.9rem;
         }
+
+        .social-container {
+            margin-bottom: 30px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .social-title {
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+            color: var(--text-primary);
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .social-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            background-color: var(--bg-primary);
+            border: 1px solid var(--border-color);
+            border-radius: 50%;
+            color: var(--text-secondary);
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .social-btn svg {
+            width: 22px;
+            height: 22px;
+            fill: currentColor;
+        }
+
+        /* Efectos Hover específicos para cada red */
+        .social-btn:hover {
+            transform: translateY(-5px);
+            border-color: currentColor;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        .social-btn.whatsapp:hover { color: var(--whatsapp-color); }
+        .social-btn.facebook:hover { color: var(--facebook-color); }
+        .social-btn.instagram:hover { color: var(--instagram-color); }
+        .social-btn.mastodon:hover { color: var(--mastodon-color); }
+        .social-btn.reddit:hover { color: var(--reddit-color); }
+        .social-btn.veta:hover { color: var(--veta-color); }
 
         /* Responsive Media Queries */
         @media (max-width: 768px) {
@@ -317,6 +380,37 @@
 
     <footer>
         <div class="container">
+            <div class="social-container">
+                <h4 class="social-title">Sigue a KodxStudios</h4>
+                <div class="social-links">
+                    
+                    <a href="https://wa.link/kycrce" target="_blank" class="social-btn whatsapp" title="WhatsApp">
+                        <svg viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.515 2.505-.661c1.093.811 2.029 1.127 2.954 1.127 3.183 0 5.769-2.586 5.769-5.766 0-3.181-2.585-5.769-5.768-5.769zm9.92 5.766c0 5.484-4.469 9.954-9.921 9.954-1.638 0-3.321-.424-4.896-1.282l-5.632 1.488 1.492-5.467c-1.007-1.748-1.503-3.107-1.503-4.693 0-5.484 4.469-9.953 9.921-9.953 5.452 0 9.921 4.469 9.921 9.953z"/></svg>
+                    </a>
+
+                    <a href="https://www.facebook.com/share/185ek7Kvd4/" target="_blank" class="social-btn facebook" title="Facebook">
+                        <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                    </a>
+
+                    <a href="https://www.instagram.com/bryancortesz4k?igsh=b2IwMTcwN3kyb21p" target="_blank" class="social-btn instagram" title="Instagram">
+                        <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                    </a>
+
+                    <a href="https://mast.lat/@tntprojects" target="_blank" class="social-btn mastodon" title="Mastodon">
+                        <svg viewBox="0 0 24 24"><path d="M23.268 5.313c-.35-2.578-2.617-4.61-5.304-5.004C17.51.242 15.792 0 11.813 0h-.03c-3.98 0-4.835.242-7.688.309C1.48 1.37.5 3.3.003 6.13c-.004.093-.01.375-.01.528 0 2.91.01 5.82.02 8.73.01 2.33.16 4.67 1.57 6.64 1.83 2.55 4.96 2.37 8.39 1.72l-.12-.8c-2.85.5-5.74.5-8.58-.2-1.3-.3-1.87-1.3-1.95-2.5-.02-.2-.03-.5-.03-.7 2.05.6 4.3.9 6.7.9 2.5 0 4.9-.3 7.2-.9 2.1-.5 2.1-2.9 2.1-5.6 0-3.2 0-3.5-.02-3.6zM10.87 14.9H8.62v-6.5c0-1.46.6-2.2 1.8-2.2 1.24 0 1.84.8 1.84 2.3v3h1.48v-3c0-1.5.6-2.3 1.84-2.3 1.2 0 1.8.74 1.8 2.2v6.5h-2.25v-6.3c0-.85-.3-1.28-.9-1.28-.66 0-1 .43-1 1.28v4h-1.5v-4c0-.85-.34-1.28-1-1.28-.6 0-.93.43-.93 1.28v6.3z"/></svg>
+                    </a>
+
+                    <a href="https://www.reddit.com/u/tntprojects/s/Jmp26nr2ls" target="_blank" class="social-btn reddit" title="Reddit">
+                        <svg viewBox="0 0 24 24"><path d="M14.238 15.348c.085.084.085.221 0 .306-.465.462-1.194.687-2.231.687l-.008-.002-.008.002c-1.036 0-1.766-.225-2.231-.688-.085-.084-.085-.221 0-.305.084-.084.222-.084.307 0 .379.377 1.008.561 1.924.561l.008-.002.008.002c.915 0 1.544-.184 1.924-.561.085-.084.223-.084.307 0zm-3.44-2.418c0-.507-.414-.919-.922-.919-.509 0-.923.412-.923.919 0 .506.414.918.923.918.508.001.922-.411.922-.918zm13.202-.93c-3.925-2.573-11.98-2.577-15.863-.002-1.138-.703-2.603-.437-3.351.783-.72 1.173-.391 2.628.71 3.424-.038.369-.06.742-.06 1.121 0 5.42 4.57 9.833 10.155 9.833 5.586 0 10.156-4.413 10.156-9.833 0-.39-.024-.775-.067-1.155 1.174-.741 1.583-2.26 1.008-3.486-.532-1.136-1.89-1.579-2.688-.685zm-2.022 5.253c0 4.413-3.649 8.016-8.134 8.016-4.485 0-8.134-3.603-8.134-8.016 0-.361.025-.718.072-1.07.728.32 1.559.223 2.21-.242 1.066-.759 1.309-2.128.706-3.14-.541-.91-1.637-1.152-2.508-.669 3.524-2.158 10.596-2.147 14.155.009-.948.497-1.286 1.679-.769 2.549.492.83 1.536 1.15 2.383.743.05.362.078.732.078 1.107zm-7.646-1.593c.509 0 .923.412.923.919 0 .507-.414.919-.923.919-.508 0-.922-.412-.922-.919 0-.507.414-.919.922-.919z"/></svg>
+                    </a>
+
+                     <a href="https://veta.k.vu/Bryan" target="_blank" class="social-btn veta" title="VETA">
+                        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+                    </a>
+
+                </div>
+            </div>
+
             <p>© 2025 GithubSpaces. Una iniciativa de almacenamiento open-source.</p>
             <p style="margin-top: 10px;">Desarrollado y Financiado con orgullo por <strong style="color: var(--accent-color);">KodxStudios</strong>.</p>
             <p style="font-size: 0.8rem; margin-top: 20px; opacity: 0.6;">GitHub® es una marca registrada de GitHub, Inc. Este proyecto no está afiliado oficialmente con GitHub, Inc.</p>
